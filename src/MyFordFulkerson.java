@@ -136,7 +136,7 @@ public class MyFordFulkerson {
 
     public static void modifyLinks() {
         String a;
-        System.out.println("Enter 1 to remove a link \n Enter 2 to modify a link");
+        System.out.println("Enter 1 to remove a link \nEnter 2 to modify a link");
 
         choosen = scanner.nextInt();
 
