@@ -59,7 +59,7 @@ public class MyFordFulkerson {
 
         int max_flow = 0; // There is no flow initially
 
-        // Augment the flow while tere is path from source
+        // Augment the flow while there is path from source
         // to sink
         while (bfs(rGraph, s, t, parent)) {
             LinkedList<Integer> queue2 = new LinkedList<Integer>();
@@ -113,7 +113,7 @@ public class MyFordFulkerson {
         visited[s] = true;
         parent[s] = -1;
 
-        // Standard BFS Loop
+        // BFS
         while (queue.size() != 0) {
             int u = queue.poll();
 
@@ -128,7 +128,7 @@ public class MyFordFulkerson {
             }
         }
 
-        // If we reached sink in BFS starting from source, then
+        // reached sink in BFS starting from source, then
         // return true, else false
         return (visited[t] == true);
     }
@@ -142,7 +142,7 @@ public class MyFordFulkerson {
 
         if (choosen == 1) a = "remove";
         else a = "change";
-        System.out.println("Enter the number of nodes you want to " + a);
+        System.out.println("Enter the number of links you want to " + a);
         int changes = scanner.nextInt();
         int weight = 0;
 
@@ -182,7 +182,8 @@ public class MyFordFulkerson {
     }
 
     public static void dataSetsImplementation() {
-        int[][] graphA = new int[][]
+
+        int[][] graphA = new int[][] //6 Nodes 6 edges
                 {
                         {0, 16, 13, 0, 0, 0},
                         {0, 0, 0, 12, 0, 0},
@@ -196,7 +197,7 @@ public class MyFordFulkerson {
         System.out.println("\nThe maximum possible flow is " + fordFulkerson(graphA, 0, 5, 6));
         StdOut.println("elapsed time = " + timer.elapsedTime());
 
-        int[][] graphB = new int[][]
+        int[][] graphB = new int[][] //12 Nodes 12 edges
                 {
                         {0, 0, 20, 10, 0, 0, 0, 0, 7, 0, 0, 0},
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -214,7 +215,8 @@ public class MyFordFulkerson {
         Stopwatch timer2 = new Stopwatch();
         System.out.println("\nThe maximum possible flow is " + fordFulkerson(graphB, 0, 11, 12));
         StdOut.println("elapsed time = " + timer2.elapsedTime());
-        int[][] graphC = new int[][]
+
+        int[][] graphC = new int[][] //24 Nodes 24 edges
                 {
 
 
@@ -246,7 +248,8 @@ public class MyFordFulkerson {
         Stopwatch timer3 = new Stopwatch();
         System.out.println("\nThe maximum possible flow is " + fordFulkerson(graphC, 0, 23, 24));
         StdOut.println("elapsed time = " + timer3.elapsedTime());
-        int[][] graphD = new int[][]
+
+        int[][] graphD = new int[][] //48 Nodes 48 edges
                 {
 
                         {0, 0, 13, 7, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 14, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
